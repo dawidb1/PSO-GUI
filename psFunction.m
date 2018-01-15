@@ -34,14 +34,19 @@
 % %bestValue - najlepsza warotsc fitowania lokalnie dla czastki
 
 %% Wyswietlanie wykresu analizowanej funkcji
-function[] = psFunction(NUMBER_OF_AGENTS,ITERATIONS,VMAX,C1,C2,W,SEARCH_MIN_OR_MAX)
+function[] = psFunction(NUMBER_OF_AGENTS,ITERATIONS,VMAX,C1,C2,W,SEARCH_MIN_OR_MAX,WHICH_FUNCTION,PAUSE_TIME)
+cla
+SEARCH_MAX = 1;
+SEARCH_MIN = 2;
 XMIN=-30;    %input('Podaj dolny zakres x: ');
 XMAX=30;    %input('Podaj gorny zakres x: ');
 
+
 YMIN=XMIN;
 YMAX=XMAX;
-
-figure('units','normalized','outerposition',[0 0 1 1])
+xlim([XMIN XMAX])
+ylim([YMIN YMAX])
+% figure('units','normalized','outerposition',[0 0 1 1])
 xStart=XMIN-round(0.3*(XMAX-XMIN));
 xStop=XMAX+round(0.3*(XMAX-XMIN));
 yStart=xStart;
@@ -76,10 +81,10 @@ bestValue=particleValue;
 bestPosition=[xPosition yPosition];
 
 switch SEARCH_MIN_OR_MAX
-    case 1
+    case SEARCH_MAX
         [maxValue,whichParticle, bla]=maxind(particleValue);
         globalBestValue=maxValue;
-    case 0
+    case SEARCH_MIN
         [minValue,whichParticle, bla]=minind(particleValue);
         globalBestValue=minValue;
 end
@@ -92,8 +97,12 @@ for t=1:ITERATIONS
     %fitowanie
     particleValue=testowanaFunkcja(WHICH_FUNCTION, xPosition,yPosition);
     hold on
+  
     scatters(t) = scatter3(xPosition,yPosition,particleValue,70,'r','filled');
-
+    if(t>1) 
+        set(scatters(t-1),'Visible','off')
+    end
+    
     switch SEARCH_MIN_OR_MAX
         case SEARCH_MAX
             % local best
@@ -137,11 +146,11 @@ for t=1:ITERATIONS
     speedYAxis=speedYAxis*(W)+yLocal+yGlob;
 
     %modify x    
-    xPosition = xPosition+speedXAxis;s
+    xPosition = xPosition+speedXAxis;
     yPosition = yPosition+speedYAxis;
 
     pause(PAUSE_TIME);
-    set(scatters(t),'Visible','off')
+ 
 end
 end
 % 

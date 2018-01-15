@@ -9,9 +9,9 @@ switch nr_funkcji
       f=(exp(-X.^2 - Y.^2)).*X ;
     case 4
       a = 0.005;
-      f = sin((X.^2+Y.^2).*a)./a
+      f = sin((X.^2+Y.^2).*a)./a;
     case 5
-      f = ((sin(X.*0.1)).*(cos(Y.*0.1)))./0.1
+      f = ((sin(X.*0.1)).*(cos(Y.*0.1)))./0.1;
 end
 
 end

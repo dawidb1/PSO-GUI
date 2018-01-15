@@ -22,7 +22,7 @@ function varargout = untitled(varargin)
 
 % Edit the above text to modify the response to help untitled
 
-% Last Modified by GUIDE v2.5 18-Dec-2017 11:57:24
+% Last Modified by GUIDE v2.5 15-Jan-2018 10:49:13
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -126,28 +126,31 @@ function btnStart_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA) 
 
 NUMBER_OF_AGENTS = str2double(get(handles.tbAgents,'String'));
-ITERATIONS= str2double(get(handles.tbIteration,'String'));
+ITERATIONS= str2double(get(handles.tbIterations,'String'));
 VMAX = str2double(get(handles.tbVmax,'String'));
 C1 = str2double(get(handles.tbC1,'String'));
 C2 = str2double(get(handles.tbC2,'String'));
 W = str2double(get(handles.tbW,'String'));
-SEARCH_MIN_OR_MAX = 1;
 
-psFunction(NUMBER_OF_AGENTS,ITERATIONS,VMAX,C1,C2,W,SEARCH_MIN_OR_MAX);
+WHICH_FUNCTION = get(handles.popmenu_which_function,'Value');
+SEARCH_MIN_OR_MAX = get(handles.MIN_MAX,'Value');
+PAUSE_TIME = str2double(get(handles.tbPause,'String'));
 
-% --- Executes on selection change in popmenuFunction.
-function popmenuFunction_Callback(hObject, eventdata, handles)
-% hObject    handle to popmenuFunction (see GCBO)
+psFunction(NUMBER_OF_AGENTS,ITERATIONS,VMAX,C1,C2,W,SEARCH_MIN_OR_MAX,WHICH_FUNCTION,PAUSE_TIME);
+
+% --- Executes on selection change in popmenu_which_function.
+function popmenu_which_function_Callback(hObject, eventdata, handles)
+% hObject    handle to popmenu_which_function (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: contents = cellstr(get(hObject,'String')) returns popmenuFunction contents as cell array
-%        contents{get(hObject,'Value')} returns selected item from popmenuFunction
+% Hints: contents = cellstr(get(hObject,'String')) returns popmenu_which_function contents as cell array
+%        contents{get(hObject,'Value')} returns selected item from popmenu_which_function
 
 
 % --- Executes during object creation, after setting all properties.
-function popmenuFunction_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to popmenuFunction (see GCBO)
+function popmenu_which_function_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to popmenu_which_function (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -273,19 +276,19 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
-% --- Executes on selection change in popupmenu2.
-function popupmenu2_Callback(hObject, eventdata, handles)
-% hObject    handle to popupmenu2 (see GCBO)
+% --- Executes on selection change in MIN_MAX.
+function MIN_MAX_Callback(hObject, eventdata, handles)
+% hObject    handle to MIN_MAX (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: contents = cellstr(get(hObject,'String')) returns popupmenu2 contents as cell array
-%        contents{get(hObject,'Value')} returns selected item from popupmenu2
+% Hints: contents = cellstr(get(hObject,'String')) returns MIN_MAX contents as cell array
+%        contents{get(hObject,'Value')} returns selected item from MIN_MAX
 
 
 % --- Executes during object creation, after setting all properties.
-function popupmenu2_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to popupmenu2 (see GCBO)
+function MIN_MAX_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to MIN_MAX (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
