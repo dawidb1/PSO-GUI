@@ -57,6 +57,8 @@ handles.output = hObject;
 
 % Update handles structure
 guidata(hObject, handles);
+whichFunction = get(handles.popmenu_which_function,'Value');
+ShowFunction(whichFunction);
 
 % UIWAIT makes untitled wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
@@ -136,7 +138,9 @@ WHICH_FUNCTION = get(handles.popmenu_which_function,'Value');
 SEARCH_MIN_OR_MAX = get(handles.MIN_MAX,'Value');
 PAUSE_TIME = str2double(get(handles.tbPause,'String'));
 
+set(handles.btnStart,'String','Working');
 psFunction(NUMBER_OF_AGENTS,ITERATIONS,VMAX,C1,C2,W,SEARCH_MIN_OR_MAX,WHICH_FUNCTION,PAUSE_TIME);
+set(handles.btnStart,'String','Start');
 
 % --- Executes on selection change in popmenu_which_function.
 function popmenu_which_function_Callback(hObject, eventdata, handles)
@@ -146,7 +150,8 @@ function popmenu_which_function_Callback(hObject, eventdata, handles)
 
 % Hints: contents = cellstr(get(hObject,'String')) returns popmenu_which_function contents as cell array
 %        contents{get(hObject,'Value')} returns selected item from popmenu_which_function
-
+whichFunction = get(handles.popmenu_which_function,'Value');
+ShowFunction(whichFunction);
 
 % --- Executes during object creation, after setting all properties.
 function popmenu_which_function_CreateFcn(hObject, eventdata, handles)

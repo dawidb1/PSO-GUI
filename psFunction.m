@@ -35,33 +35,35 @@
 
 %% Wyswietlanie wykresu analizowanej funkcji
 function[] = psFunction(NUMBER_OF_AGENTS,ITERATIONS,VMAX,C1,C2,W,SEARCH_MIN_OR_MAX,WHICH_FUNCTION,PAUSE_TIME)
-cla
+
 SEARCH_MAX = 1;
 SEARCH_MIN = 2;
-XMIN=-30;    %input('Podaj dolny zakres x: ');
-XMAX=30;    %input('Podaj gorny zakres x: ');
 
-
+ShowFunction(WHICH_FUNCTION);
+XMIN=-30;   
+XMAX=30;    
 YMIN=XMIN;
 YMAX=XMAX;
-xlim([XMIN XMAX])
-ylim([YMIN YMAX])
-% figure('units','normalized','outerposition',[0 0 1 1])
-xStart=XMIN-round(0.3*(XMAX-XMIN));
-xStop=XMAX+round(0.3*(XMAX-XMIN));
-yStart=xStart;
-yStop=xStop;
-
-functionSamples = (xStop-xStart)*2;
-xToShow=linspace(xStart, xStop, functionSamples);
-xToShow=repmat(xToShow,functionSamples,1);
-yToShow=xToShow';
-
-fToShow=testowanaFunkcja(WHICH_FUNCTION, xToShow, yToShow);
-surf(xToShow,yToShow,fToShow);
-xlabel('X axes');
-ylabel('Y axes');
-view(45,45);
+% 
+% 
+% % figure('units','normalized','outerposition',[0 0 1 1])
+% xStart=XMIN-round(0.3*(XMAX-XMIN));
+% xStop=XMAX+round(0.3*(XMAX-XMIN));
+% yStart=xStart;
+% yStop=xStop;
+% xlim([xStart xStop])
+% ylim([yStart yStop])
+% 
+% functionSamples = (xStop-xStart)*2;
+% xToShow=linspace(xStart, xStop, functionSamples);
+% xToShow=repmat(xToShow,functionSamples,1);
+% yToShow=xToShow';
+% 
+% fToShow=testowanaFunkcja(WHICH_FUNCTION, xToShow, yToShow);
+% surf(xToShow,yToShow,fToShow);
+% xlabel('X axes');
+% ylabel('Y axes');
+% view(45,45);
 
 %% INITIALIZATION
 e=exp(1);
