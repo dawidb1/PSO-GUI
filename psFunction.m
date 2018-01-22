@@ -100,11 +100,11 @@ for t=1:ITERATIONS
  
 end
 
-% hold on 
-% scatter3(xPosition,yPosition,particleValue,70,'r','filled');
-% globalBestValue
-% particleValue
-% meanParticleValue = mean(particleValue)
+hold on 
+scatter3(xPosition,yPosition,particleValue,70,'r','filled');
+particleValue
+meanParticleValue = mean(particleValue)
+globalBestValue
 end
 
 
