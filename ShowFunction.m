@@ -1,13 +1,14 @@
+%Wyswietlanie wykresu analizowanej funkcji
 function [] = ShowFunction(WHICH_FUNCTION)
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
 cla
-XMIN=-30;    %input('Podaj dolny zakres x: ');
-XMAX=30;    %input('Podaj gorny zakres x: ');
+XMIN=-30;   
+XMAX=30;    
 YMIN=XMIN;
 YMAX=XMAX;
 
-% figure('units','normalized','outerposition',[0 0 1 1])
+
 xStart=XMIN-round(0.3*(XMAX-XMIN));
 xStop=XMAX+round(0.3*(XMAX-XMIN));
 yStart=xStart;

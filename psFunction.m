@@ -1,39 +1,4 @@
-% clear
-% close all
-% clc
-% 
-% % TECHNICAL CONSTANTS
-% PAUSE_TIME = 0.1;
-% SEARCH_MAX = 1;
-% SEARCH_MIN = 0;
-% 
-% SEARCH_MIN_OR_MAX = SEARCH_MIN;
-% 
-% WHICH_FUNCTION=4;   % 1 Gauss
-%                     % 2 Roof
-%                     % 3 
-%                     % 4 Ripple
-%                     % 5 Bumps
-%                     
-% % ALGORITM CONSTANTS
-% NUMBER_OF_AGENTS=20;    %input('Podaj liczbe agentow: ');
-% ITERATIONS=50;  %input('Podaj liczbe iteracji: ');
-% XMIN=-30;    %input('Podaj dolny zakres x: ');
-% XMAX=30;    %input('Podaj gorny zakres x: ');
-% 
-% YMIN=XMIN;
-% YMAX=XMAX;
-% 
-% VMAX=0.1;%input('Podaj maksymalna poczatkowa predkosc: ');
-%                 
-% C1=0.003;   % wp³yw lokalnego wyszukiwania ka¿dej cz¹steczki
-% C2=0.3;     % wp³yw globalnego wyszukiwania najlepszej wartoœci
-% W=0.2;      % wp³yw dotychczasowego wektora prêdkoœci na nowy wektor
-% 
-% %bestPosition - najlepsze polozenie lokalnie czastki
-% %bestValue - najlepsza warotsc fitowania lokalnie dla czastki
 
-%% Wyswietlanie wykresu analizowanej funkcji
 function[] = psFunction(NUMBER_OF_AGENTS,ITERATIONS,VMAX,C1,C2,W,SEARCH_MIN_OR_MAX,WHICH_FUNCTION,PAUSE_TIME)
 
 SEARCH_MAX = 1;
@@ -44,26 +9,6 @@ XMIN=-30;
 XMAX=30;    
 YMIN=XMIN;
 YMAX=XMAX;
-% 
-% 
-% % figure('units','normalized','outerposition',[0 0 1 1])
-% xStart=XMIN-round(0.3*(XMAX-XMIN));
-% xStop=XMAX+round(0.3*(XMAX-XMIN));
-% yStart=xStart;
-% yStop=xStop;
-% xlim([xStart xStop])
-% ylim([yStart yStop])
-% 
-% functionSamples = (xStop-xStart)*2;
-% xToShow=linspace(xStart, xStop, functionSamples);
-% xToShow=repmat(xToShow,functionSamples,1);
-% yToShow=xToShow';
-% 
-% fToShow=testowanaFunkcja(WHICH_FUNCTION, xToShow, yToShow);
-% surf(xToShow,yToShow,fToShow);
-% xlabel('X axes');
-% ylabel('Y axes');
-% view(45,45);
 
 %% INITIALIZATION
 e=exp(1);
@@ -154,10 +99,12 @@ for t=1:ITERATIONS
     pause(PAUSE_TIME);
  
 end
-end
-% 
+
 % hold on 
 % scatter3(xPosition,yPosition,particleValue,70,'r','filled');
 % globalBestValue
 % particleValue
 % meanParticleValue = mean(particleValue)
+end
+
+
