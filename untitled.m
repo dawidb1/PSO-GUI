@@ -139,7 +139,7 @@ SEARCH_MIN_OR_MAX = get(handles.MIN_MAX,'Value');
 PAUSE_TIME = str2double(get(handles.tbPause,'String'));
 
 set(handles.btnStart,'String','Working');
-psFunction(NUMBER_OF_AGENTS,ITERATIONS,VMAX,C1,C2,W,SEARCH_MIN_OR_MAX,WHICH_FUNCTION,PAUSE_TIME);
+Algorithm(NUMBER_OF_AGENTS,ITERATIONS,VMAX,C1,C2,W,SEARCH_MIN_OR_MAX,WHICH_FUNCTION,PAUSE_TIME);
 set(handles.btnStart,'String','Start');
 
 % --- Executes on selection change in popmenu_which_function.
