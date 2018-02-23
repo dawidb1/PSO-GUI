@@ -1,5 +1,5 @@
 # PSO 2D algorithm
-Particle Swarm Optimization simulator in Matlab environment. You can test algorithm on 5th 3D functions build in and search maximum or minimum function value. 
+Particle Swarm Optimization simulator in Matlab environment. You can test algorithm on 5th 3D functions build in and search maximum or minimum function value. It is easy to change all posible values.
 
 ## Algorithm schema
 
