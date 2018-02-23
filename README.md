@@ -14,7 +14,7 @@ Particle Swarm Optimization simulator in Matlab environment. You can test algori
 
 
 ## Parameters
-Vmax - maximal start particle speed 
-C1 - factor describing local result influence on each particle
-C2 - factor describing global result influence on each particle
-W - factor describing previous speed vector influence on new speed vector.
+- Vmax - maximal start particle speed 
+- C1 - factor describing local result influence on each particle
+- C2 - factor describing global result influence on each particle
+- W - factor describing previous speed vector influence on new speed vector.
