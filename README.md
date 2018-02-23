@@ -32,7 +32,7 @@ pokoleniami
 8. Modyfikacja położenia o nowy wektor prędkości
 9. Wyświetlenie wyniku
 
-Vmax - maksymalna prędkość początkowa
-C1 -  współczynnik określający wpływ lokalnego wyszukiwania każdej cząsteczki
-C2 - współczynnik określający wpływ globalnego wyszukiwania najlepszej wartości, inaczej - wpływ przewodnika stada.
-W - współczynnik określający wpływ dotychczasowego wektora prędkości na nowy wektor prędkości
+- Vmax - maksymalna prędkość początkowa
+- C1 -  współczynnik określający wpływ lokalnego wyszukiwania każdej cząsteczki
+- C2 - współczynnik określający wpływ globalnego wyszukiwania najlepszej wartości, inaczej - wpływ przewodnika stada.
+- W - współczynnik określający wpływ dotychczasowego wektora prędkości na nowy wektor prędkości
